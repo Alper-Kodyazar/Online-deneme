@@ -1,1 +1,61 @@
-html content from index
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hızlı İşlem</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Hızlı İşlem</h1>
+
+  <div id="settings" class="card">
+    <input type="text" id="nameInput" placeholder="İsmini gir">
+
+    <select id="difficulty">
+      <option value="easy">Kolay</option>
+      <option value="medium">Orta</option>
+      <option value="hard">Zor</option>
+    </select>
+
+    <select id="operation">
+      <option value="multiply">Çarpma</option>
+      <option value="add">Toplama</option>
+      <option value="subtract">Çıkarma</option>
+      <option value="random">Karışık</option>
+    </select>
+
+    <select id="gameMode">
+      <option value="normal">Normal Mod</option>
+      <option value="fast">Hızlı Mod (20sn)</option>
+      <option value="bomb">Zaman Bombası</option>
+    </select>
+
+    <button id="startButton">Oyuna Başla</button>
+    <button onclick="toggleTheme()">Tema Değiştir</button>
+    <button onclick="loadCampaignLevel(0)">Hikaye Modu</button>
+  </div>
+
+  <div id="game" class="card" style="display:none;">
+    <p id="timer">Süre: 30</p>
+    <div id="questionDisplay"></div>
+    <input type="number" id="inputField" placeholder="Cevap">
+    <p>Skor: <span id="score">0</span></p>
+    <p>Seviye: <span id="level">1</span> | XP: <span id="xp">0</span></p>
+    <div class="xp-bar"><div class="xp-fill" id="xpFill"></div></div>
+  </div>
+
+  <div id="scoreboard" class="card" style="display:none;">
+    <h2>Liderlik Tablosu</h2>
+    <ul id="highScores"></ul>
+    <button onclick="restartGame()">Yeniden Oyna</button>
+    <button onclick="copyChallengeLink()">Skorumu Paylaş</button>
+  </div>
+
+  <script src="js/ui.js"></script>
+  <script src="js/characters.js"></script>
+  <script src="js/campaign.js"></script>
+  <script src="js/stats.js"></script>
+  <script src="js/core.js"></script>
+</body>
+</html>
